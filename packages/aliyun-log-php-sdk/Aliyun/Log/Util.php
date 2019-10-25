@@ -163,7 +163,7 @@ class Aliyun_Log_Util {
     }
     
     /**
-     * Get request authorization string as defined.
+     * Get Requests authorization string as defined.
      *
      * @return string
      */

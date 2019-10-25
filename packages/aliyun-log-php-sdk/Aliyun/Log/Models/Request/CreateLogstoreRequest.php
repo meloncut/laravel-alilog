@@ -7,7 +7,7 @@
 require_once realpath(dirname(__FILE__) . '/Request.php');
 
 /**
- * The request used to create logstore from log service.
+ * The Requests used to create logstore from log service.
  *
  * @author log service dev
  */

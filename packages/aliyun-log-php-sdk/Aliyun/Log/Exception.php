@@ -5,7 +5,7 @@
  */
 
 /**
- * The Exception of the log serivce request & response.
+ * The Exception of the log serivce Requests & response.
  *
  * @author log service dev
  */
@@ -23,7 +23,7 @@ class Aliyun_Log_Exception extends Exception{
      * @param string $message
      *            detailed information for the exception.
      * @param string $requestId
-     *            the request id of the response, '' is set if client error.
+     *            the Requests id of the response, '' is set if client error.
      */
     public function __construct($code, $message, $requestId='') {
         parent::__construct($message);

@@ -194,7 +194,7 @@ class Aliyun_Log_Client {
         } else {
             $headers ['Content-Length'] = 0;
             $headers ["x-log-bodyrawsize"] = 0;
-            $headers ['Content-Type'] = ''; // If not set, http request will add automatically.
+            $headers ['Content-Type'] = ''; // If not set, http Requests will add automatically.
         }
         
         $headers ['x-log-apiversion'] = API_VERSION;
@@ -224,7 +224,7 @@ class Aliyun_Log_Client {
      * Put logs to Log Service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_PutLogsRequest $request the PutLogs request parameters class
+     * @param Aliyun_Log_Models_PutLogsRequest $request the PutLogs Requests parameters class
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_PutLogsResponse
      */
@@ -437,7 +437,7 @@ class Aliyun_Log_Client {
      * create logstore 
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_CreateLogstoreRequest $request the CreateLogStore request parameters class.
+     * @param Aliyun_Log_Models_CreateLogstoreRequest $request the CreateLogStore Requests parameters class.
      * @throws Aliyun_Log_Exception
      * return Aliyun_Log_Models_CreateLogstoreResponse
      */
@@ -464,7 +464,7 @@ class Aliyun_Log_Client {
      * update logstore 
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_UpdateLogstoreRequest $request the UpdateLogStore request parameters class.
+     * @param Aliyun_Log_Models_UpdateLogstoreRequest $request the UpdateLogStore Requests parameters class.
      * @throws Aliyun_Log_Exception
      * return Aliyun_Log_Models_UpdateLogstoreResponse
      */
@@ -490,7 +490,7 @@ class Aliyun_Log_Client {
      * List all logstores of requested project.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_ListLogstoresRequest $request the ListLogstores request parameters class.
+     * @param Aliyun_Log_Models_ListLogstoresRequest $request the ListLogstores Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_ListLogstoresResponse
      */
@@ -509,7 +509,7 @@ class Aliyun_Log_Client {
      * Delete logstore
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_DeleteLogstoreRequest $request the DeleteLogstores request parameters class.
+     * @param Aliyun_Log_Models_DeleteLogstoreRequest $request the DeleteLogstores Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_DeleteLogstoresResponse
      */
@@ -529,7 +529,7 @@ class Aliyun_Log_Client {
      * List all topics in a logstore.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_ListTopicsRequest $request the ListTopics request parameters class.
+     * @param Aliyun_Log_Models_ListTopicsRequest $request the ListTopics Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_ListTopicsResponse
      */
@@ -554,7 +554,7 @@ class Aliyun_Log_Client {
      * Get histograms of requested query from log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetHistogramsRequest $request the GetHistograms request parameters class.
+     * @param Aliyun_Log_Models_GetHistogramsRequest $request the GetHistograms Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return array(json body, http header)
      */
@@ -583,7 +583,7 @@ class Aliyun_Log_Client {
      * Get histograms of requested query from log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetHistogramsRequest $request the GetHistograms request parameters class.
+     * @param Aliyun_Log_Models_GetHistogramsRequest $request the GetHistograms Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_GetHistogramsResponse
      */
@@ -598,7 +598,7 @@ class Aliyun_Log_Client {
      * Get logs from Log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetLogsRequest $request the GetLogs request parameters class.
+     * @param Aliyun_Log_Models_GetLogsRequest $request the GetLogs Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return array(json body, http header)
      */
@@ -634,7 +634,7 @@ class Aliyun_Log_Client {
      * Get logs from Log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetLogsRequest $request the GetLogs request parameters class.
+     * @param Aliyun_Log_Models_GetLogsRequest $request the GetLogs Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_GetLogsResponse
      */
@@ -649,7 +649,7 @@ class Aliyun_Log_Client {
      * Get logs from Log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetProjectLogsRequest $request the GetLogs request parameters class.
+     * @param Aliyun_Log_Models_GetProjectLogsRequest $request the GetLogs Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return array(json body, http header)
      */
@@ -670,7 +670,7 @@ class Aliyun_Log_Client {
      * Get logs from Log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetProjectLogsRequest $request the GetLogs request parameters class.
+     * @param Aliyun_Log_Models_GetProjectLogsRequest $request the GetLogs Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_GetLogsResponse
      */
@@ -685,7 +685,7 @@ class Aliyun_Log_Client {
      * Get logs from Log service with shardid conditions.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_BatchGetLogsRequest $request the BatchGetLogs request parameters class.
+     * @param Aliyun_Log_Models_BatchGetLogsRequest $request the BatchGetLogs Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_BatchGetLogsResponse
      */
@@ -721,7 +721,7 @@ class Aliyun_Log_Client {
      * List Shards from Log service with Project and logstore conditions.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_ListShardsRequest $request the ListShards request parameters class.
+     * @param Aliyun_Log_Models_ListShardsRequest $request the ListShards Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_ListShardsResponse
      */
@@ -742,7 +742,7 @@ class Aliyun_Log_Client {
      * split a shard into two shards  with Project and logstore and shardId and midHash conditions.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_SplitShardRequest $request the SplitShard request parameters class.
+     * @param Aliyun_Log_Models_SplitShardRequest $request the SplitShard Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_ListShardsResponse
      */
@@ -766,7 +766,7 @@ class Aliyun_Log_Client {
      * merge two shards into one shard with Project and logstore and shardId and conditions.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_MergeShardsRequest $request the MergeShards request parameters class.
+     * @param Aliyun_Log_Models_MergeShardsRequest $request the MergeShards Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_ListShardsResponse
      */
@@ -788,7 +788,7 @@ class Aliyun_Log_Client {
      * delete a read only shard with Project and logstore and shardId conditions.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_DeleteShardRequest $request the DeleteShard request parameters class.
+     * @param Aliyun_Log_Models_DeleteShardRequest $request the DeleteShard Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_ListShardsResponse
      */
@@ -809,7 +809,7 @@ class Aliyun_Log_Client {
      * Get cursor from Log service.
      * Unsuccessful opertaion will cause an Aliyun_Log_Exception.
      *
-     * @param Aliyun_Log_Models_GetCursorRequest $request the GetCursor request parameters class.
+     * @param Aliyun_Log_Models_GetCursorRequest $request the GetCursor Requests parameters class.
      * @throws Aliyun_Log_Exception
      * @return Aliyun_Log_Models_GetCursorResponse
      */

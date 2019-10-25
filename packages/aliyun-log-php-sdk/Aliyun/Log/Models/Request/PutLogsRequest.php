@@ -8,7 +8,7 @@
 require_once realpath(dirname(__FILE__) . '/Request.php');
 
 /**
- * The request used to send data to log server.
+ * The Requests used to send data to log server.
  *
  * @author log service dev
  */

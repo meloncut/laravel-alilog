@@ -48,9 +48,9 @@ class Aliyun_Log_Models_Response {
     }
     
     /**
-     * Get the request id of the response. '' will be return if not set.
+     * Get the Requests id of the response. '' will be return if not set.
      *
-     * @return string request id
+     * @return string Requests id
      */
     public function getRequestId() {
         return isset ( $this->headers ['x-log-requestid'] ) ? $this->headers ['x-log-requestid'] : '';

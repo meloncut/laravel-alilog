@@ -7,7 +7,7 @@
 require_once realpath(dirname(__FILE__) . '/Request.php');
 
 /**
- * The request used to get logs by a query from log service.
+ * The Requests used to get logs by a query from log service.
  *
  * @author log service dev
  */
@@ -212,7 +212,7 @@ class Aliyun_Log_Models_GetLogsRequest extends Aliyun_Log_Models_Request {
     }
     
     /**
-     * Set request line offset of return logs
+     * Set Requests line offset of return logs
      * 
      * @param integer $offset
      *            line offset of return logs
@@ -222,7 +222,7 @@ class Aliyun_Log_Models_GetLogsRequest extends Aliyun_Log_Models_Request {
     }
     
     /**
-     * Get request reverse flag
+     * Get Requests reverse flag
      * 
      * @return bool reverse flag
      */
@@ -231,7 +231,7 @@ class Aliyun_Log_Models_GetLogsRequest extends Aliyun_Log_Models_Request {
     }
     
     /**
-     * Set request reverse flag
+     * Set Requests reverse flag
      *
      * @param bool $reverse
      *            reverse flag

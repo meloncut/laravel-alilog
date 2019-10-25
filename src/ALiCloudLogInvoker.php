@@ -6,11 +6,11 @@
  * Time: 4:23 PM
  */
 
-namespace AliLog;
+namespace Meloncut\AliLog;
 
 use Illuminate\Support\Facades\Config;
 
-require_once (__DIR__.'/../../packages/aliyun-log-php-sdk/Log_Autoload.php');
+require_once(__DIR__ . '/../../packages/aliyun-log-php-sdk/Log_Autoload.php');
 
 class ALiCloudLogInvoker
 {

@@ -7,7 +7,7 @@
 require_once realpath(dirname(__FILE__) . '/Request.php');
 
 /**
- * The request used to get histograms of a query from log service.
+ * The Requests used to get histograms of a query from log service.
  *
  * @author log service dev
  */

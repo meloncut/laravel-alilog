@@ -8,7 +8,6 @@
 
 namespace Meloncut\AliLog;
 
-use AliLog\ALiCloudLogInvoker;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
 

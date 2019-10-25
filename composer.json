@@ -22,7 +22,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Meloncut\\AliLog": "src/"
+      "Meloncut\\AliLog": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Meloncut\\AliLog\\Tests\\": "tests"
     }
   },
   "repositories": [

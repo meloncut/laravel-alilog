@@ -1,6 +1,6 @@
 <?php
 /**
- * Handles all HTTP requests using cURL and manages the responses.
+ * Handles all HTTP Requests using cURL and manages the responses.
  *
  * @version 2011.06.07
  * @copyright 2006-2011 Ryan Parman
@@ -17,32 +17,32 @@ class RequestCore
 	public $request_url;
 
 	/**
-	 * The headers being sent in the request.
+	 * The headers being sent in the Requests.
 	 */
 	public $request_headers;
 
 	/**
-	 * The body being sent in the request.
+	 * The body being sent in the Requests.
 	 */
 	public $request_body;
 
 	/**
-	 * The response returned by the request.
+	 * The response returned by the Requests.
 	 */
 	public $response;
 
 	/**
-	 * The headers returned by the request.
+	 * The headers returned by the Requests.
 	 */
 	public $response_headers;
 
 	/**
-	 * The body returned by the request.
+	 * The body returned by the Requests.
 	 */
 	public $response_body;
 
 	/**
-	 * The HTTP status code returned by the request.
+	 * The HTTP status code returned by the Requests.
 	 */
 	public $response_code;
 
@@ -57,22 +57,22 @@ class RequestCore
 	public $curl_handle;
 
 	/**
-	 * The method by which the request is being made.
+	 * The method by which the Requests is being made.
 	 */
 	public $method;
 
 	/**
-	 * Stores the proxy settings to use for the request.
+	 * Stores the proxy settings to use for the Requests.
 	 */
 	public $proxy = null;
 
 	/**
-	 * The username to use for the request.
+	 * The username to use for the Requests.
 	 */
 	public $username = null;
 
 	/**
-	 * The password to use for the request.
+	 * The password to use for the Requests.
 	 */
 	public $password = null;
 
@@ -192,9 +192,9 @@ class RequestCore
 	/**
 	 * Constructs a new instance of this class.
 	 *
-	 * @param string $url (Optional) The URL to request or service endpoint to query.
+	 * @param string $url (Optional) The URL to Requests or service endpoint to query.
 	 * @param string $proxy (Optional) The faux-url to use for proxy settings. Takes the following format: `proxy://user:pass@hostname:port`
-	 * @param array $helpers (Optional) An associative array of classnames to use for request, and response functionality. Gets passed in automatically by the calling class.
+	 * @param array $helpers (Optional) An associative array of classnames to use for Requests, and response functionality. Gets passed in automatically by the calling class.
 	 * @return $this A reference to the current instance.
 	 */
 	public function __construct($url = null, $proxy = null, $helpers = null)
@@ -206,9 +206,9 @@ class RequestCore
 		$this->request_body = '';
 
 		// Set a new Request class if one was set.
-		if (isset($helpers['request']) && !empty($helpers['request']))
+		if (isset($helpers['Requests']) && !empty($helpers['Requests']))
 		{
-			$this->request_class = $helpers['request'];
+			$this->request_class = $helpers['Requests'];
 		}
 
 		// Set a new Request class if one was set.
@@ -264,7 +264,7 @@ class RequestCore
 	}
 
 	/**
-	 * Adds a custom HTTP header to the cURL request.
+	 * Adds a custom HTTP header to the cURL Requests.
 	 *
 	 * @param string $key (Required) The custom HTTP header to set.
 	 * @param mixed $value (Required) The value to assign to the custom HTTP header.
@@ -277,7 +277,7 @@ class RequestCore
 	}
 
 	/**
-	 * Removes an HTTP header from the cURL request.
+	 * Removes an HTTP header from the cURL Requests.
 	 *
 	 * @param string $key (Required) The custom HTTP header to set.
 	 * @return $this A reference to the current instance.
@@ -292,7 +292,7 @@ class RequestCore
 	}
 
 	/**
-	 * Set the method type for the request.
+	 * Set the method type for the Requests.
 	 *
 	 * @param string $method (Required) One of the following constants: <HTTP_GET>, <HTTP_POST>, <HTTP_PUT>, <HTTP_HEAD>, <HTTP_DELETE>.
 	 * @return $this A reference to the current instance.
@@ -316,9 +316,9 @@ class RequestCore
 	}
 
 	/**
-	 * Set the body to send in the request.
+	 * Set the body to send in the Requests.
 	 *
-	 * @param string $body (Required) The textual content to send along in the body of the request.
+	 * @param string $body (Required) The textual content to send along in the body of the Requests.
 	 * @return $this A reference to the current instance.
 	 */
 	public function set_body($body)
@@ -328,9 +328,9 @@ class RequestCore
 	}
 
 	/**
-	 * Set the URL to make the request to.
+	 * Set the URL to make the Requests to.
 	 *
-	 * @param string $url (Required) The URL to make the request to.
+	 * @param string $url (Required) The URL to make the Requests to.
 	 * @return $this A reference to the current instance.
 	 */
 	public function set_request_url($url)
@@ -438,7 +438,7 @@ class RequestCore
 	}
 
 	/**
-	 * Set the proxy to use for making requests.
+	 * Set the proxy to use for making Requests.
 	 *
 	 * @param string $proxy (Required) The faux-url to use for proxy settings. Takes the following format: `proxy://user:pass@hostname:port`
 	 * @return $this A reference to the current instance.
@@ -522,7 +522,7 @@ class RequestCore
 	/**
 	 * A callback function that is invoked by cURL for streaming up.
 	 *
-	 * @param resource $curl_handle (Required) The cURL handle for the request.
+	 * @param resource $curl_handle (Required) The cURL handle for the Requests.
 	 * @param resource $file_handle (Required) The open file handle resource.
 	 * @param integer $length (Required) The maximum number of bytes to read.
 	 * @return binary Binary data from a stream.
@@ -562,7 +562,7 @@ class RequestCore
 	/**
 	 * A callback function that is invoked by cURL for streaming down.
 	 *
-	 * @param resource $curl_handle (Required) The cURL handle for the request.
+	 * @param resource $curl_handle (Required) The cURL handle for the Requests.
 	 * @param binary $data (Required) The data to write.
 	 * @return integer The number of bytes written.
 	 */
@@ -594,7 +594,7 @@ class RequestCore
 	}
 
 	/**
-	 * Prepares and adds the details of the cURL request. This can be passed along to a <php:curl_multi_exec()>
+	 * Prepares and adds the details of the cURL Requests. This can be passed along to a <php:curl_multi_exec()>
 	 * function.
 	 *
 	 * @return resource The handle for the cURL object.
@@ -754,7 +754,7 @@ class RequestCore
 	 * data stored in the `curl_handle` and `response` properties unless replacement data is passed in via
 	 * parameters.
 	 *
-	 * @param resource $curl_handle (Optional) The reference to the already executed cURL request.
+	 * @param resource $curl_handle (Optional) The reference to the already executed cURL Requests.
 	 * @param string $response (Optional) The actual response content itself that needs to be parsed.
 	 * @return ResponseCore A <ResponseCore> object containing a parsed HTTP response.
 	 */
@@ -804,10 +804,10 @@ class RequestCore
 	}
 
 	/**
-	 * Sends the request, calling necessary utility functions to update built-in properties.
+	 * Sends the Requests, calling necessary utility functions to update built-in properties.
 	 *
 	 * @param boolean $parse (Optional) Whether to parse the response with ResponseCore or not.
-	 * @return string The resulting unparsed data from the request.
+	 * @return string The resulting unparsed data from the Requests.
 	 */
 	public function send_request($parse = false)
 	{
@@ -834,12 +834,12 @@ class RequestCore
 	}
 
 	/**
-	 * Sends the request using <php:curl_multi_exec()>, enabling parallel requests. Uses the "rolling" method.
+	 * Sends the Requests using <php:curl_multi_exec()>, enabling parallel Requests. Uses the "rolling" method.
 	 *
 	 * @param array $handles (Required) An indexed array of cURL handles to process simultaneously.
 	 * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
 	 * 	<li><code>callback</code> - <code>string|array</code> - Optional - The string name of a function to pass the response data to. If this is a method, pass an array where the <code>[0]</code> index is the class and the <code>[1]</code> index is the method name.</li>
-	 * 	<li><code>limit</code> - <code>integer</code> - Optional - The number of simultaneous requests to make. This can be useful for scaling around slow server responses. Defaults to trusting cURLs judgement as to how many to use.</li></ul>
+	 * 	<li><code>limit</code> - <code>integer</code> - Optional - The number of simultaneous Requests to make. This can be useful for scaling around slow server responses. Defaults to trusting cURLs judgement as to how many to use.</li></ul>
 	 * @return array Post-processed cURL responses.
 	 */
 	public function send_multi_request($handles, $opt = null)
@@ -883,7 +883,7 @@ class RequestCore
 				if (count($handles) > 0) break;
 			}
 
-			// Figure out which requests finished.
+			// Figure out which Requests finished.
 			$to_process = array();
 
 			while ($done = curl_multi_info_read($multi_handle))
@@ -894,14 +894,14 @@ class RequestCore
 					throw new RequestCore_Exception('cURL resource: ' . (string) $done['handle'] . '; cURL error: ' . curl_error($done['handle']) . ' (' . $done['result'] . ')');
 				}
 
-				// Because curl_multi_info_read() might return more than one message about a request, we check to see if this request is already in our array of completed requests
+				// Because curl_multi_info_read() might return more than one message about a Requests, we check to see if this Requests is already in our array of completed Requests
 				elseif (!isset($to_process[(int) $done['handle']]))
 				{
 					$to_process[(int) $done['handle']] = $done;
 				}
 			}
 
-			// Actually deal with the request
+			// Actually deal with the Requests
 			foreach ($to_process as $pkey => $done)
 			{
 				$response = $http->process_response($done['handle'], curl_multi_getcontent($done['handle']));
@@ -930,7 +930,7 @@ class RequestCore
 	// RESPONSE METHODS
 
 	/**
-	 * Get the HTTP response headers from the request.
+	 * Get the HTTP response headers from the Requests.
 	 *
 	 * @param string $header (Optional) A specific header value to return. Defaults to all headers.
 	 * @return string|array All or selected header values.
@@ -945,7 +945,7 @@ class RequestCore
 	}
 
 	/**
-	 * Get the HTTP response body from the request.
+	 * Get the HTTP response body from the Requests.
 	 *
 	 * @return string The response body.
 	 */
@@ -955,7 +955,7 @@ class RequestCore
 	}
 
 	/**
-	 * Get the HTTP response code from the request.
+	 * Get the HTTP response code from the Requests.
 	 *
 	 * @return string The HTTP response code.
 	 */
@@ -991,7 +991,7 @@ class ResponseCore
 	 *
 	 * @param array $header (Required) Associative array of HTTP headers (typically returned by <RequestCore::get_response_header()>).
 	 * @param string $body (Required) XML-formatted response from AWS.
-	 * @param integer $status (Optional) HTTP response status code from the request.
+	 * @param integer $status (Optional) HTTP response status code from the Requests.
 	 * @return object Contains an <php:array> `header` property (HTTP headers as an associative array), a <php:SimpleXMLElement> or <php:string> `body` property, and an <php:integer> `status` code.
 	 */
 	public function __construct($header, $body, $status = null)

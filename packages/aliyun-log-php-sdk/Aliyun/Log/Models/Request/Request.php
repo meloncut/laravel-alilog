@@ -5,7 +5,7 @@
  */
 
 /**
- * The base request of all log request.
+ * The base Requests of all log Requests.
  *
  * @author log service dev
  */

@@ -7,7 +7,7 @@
 require_once realpath(dirname(__FILE__) . '/Request.php');
 
 /**
- * The request used to get cursor by fromTime or begin/end mode 
+ * The Requests used to get cursor by fromTime or begin/end mode 
  *
  * @author log service dev
  */
