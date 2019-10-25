@@ -24,17 +24,6 @@ class AliCloudLogHandler extends AbstractProcessingHandler
 
     protected function write(array $record)
     {
-        $this->syncLog($record);
-    }
-
-    /**
-     * send log to ali cloud server directly
-     *
-     * @param array $record
-     * @author <meloncut@outlook.com>
-     */
-    protected function syncLog(array $record)
-    {
         $this->invoker->sendLog($record);
     }
 }
