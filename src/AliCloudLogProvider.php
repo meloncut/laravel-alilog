@@ -8,8 +8,6 @@
 
 namespace Meloncut\AliLog;
 
-
-use AliLog\ALiCloudLogInvoker;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
