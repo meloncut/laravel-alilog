@@ -15,7 +15,7 @@ class AliCloudLogHandler extends AbstractProcessingHandler
 {
     protected $invoker;
 
-    public function __construct(ALiCloudLogInvoker $invoker,\int $level = Logger::DEBUG, bool $bubble = true)
+    public function __construct(ALiCloudLogInvoker $invoker,int $level = Logger::DEBUG, bool $bubble = true)
     {
         $this->invoker = $invoker;
         parent::__construct($level, $bubble);

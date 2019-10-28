@@ -10,10 +10,27 @@ namespace Meloncut\AliLog;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Config;
 use Monolog\Logger;
 
 class AliCloudLogProvider extends ServiceProvider
 {
+    /**
+     * The Log levels.
+     *
+     * @var array
+     */
+    protected $levels = [
+        'debug'     => Logger::DEBUG,
+        'info'      => Logger::INFO,
+        'notice'    => Logger::NOTICE,
+        'warning'   => Logger::WARNING,
+        'error'     => Logger::ERROR,
+        'critical'  => Logger::CRITICAL,
+        'alert'     => Logger::ALERT,
+        'emergency' => Logger::EMERGENCY,
+    ];
+
     public function __construct(Application $app)
     {
         parent::__construct($app);
@@ -21,12 +38,12 @@ class AliCloudLogProvider extends ServiceProvider
 
     public function register()
     {
+        $this->AliLogInit();
         $this->app->configureMonologUsing(function (Logger $monolog) {
             $monolog->pushHandler(
-                new AliCloudLogHandler($this->app->get(ALiCloudLogInvoker::class),Logger::DEBUG)
+                new AliCloudLogHandler($this->app->get(ALiCloudLogInvoker::class),$this->logLevelTransfer(Config::get('app.log_level','debug')))
             );
         });
-        $this->AliLogInit();
     }
 
     protected function AliLogInit()
@@ -35,5 +52,10 @@ class AliCloudLogProvider extends ServiceProvider
             return new ALiCloudLogInvoker();
         });
 
+    }
+
+    protected function logLevelTransfer($level)
+    {
+        return $this->levels[$level] ?? Logger::INFO;
     }
 }
