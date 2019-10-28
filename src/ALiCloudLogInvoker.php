@@ -10,7 +10,7 @@ namespace Meloncut\AliLog;
 
 use Illuminate\Support\Facades\Config;
 
-require_once(__DIR__ . '/../../packages/aliyun-log-php-sdk/Log_Autoload.php');
+require_once(__DIR__ . '/../packages/aliyun-log-php-sdk/Log_Autoload.php');
 
 class ALiCloudLogInvoker
 {
@@ -38,7 +38,7 @@ class ALiCloudLogInvoker
     public function sendLog(array $record)
     {
         try{
-            $this->put_log_request->setLogItems([$record]);
+            $this->put_log_request->setLogItems([new \Aliyun_Log_Models_LogItem(null,$record)]);
             $this->ali_log_client->putLogs($this->put_log_request);
         } catch (\Aliyun_Log_Exception $e) {
             #TODO DO NOTHING NOW

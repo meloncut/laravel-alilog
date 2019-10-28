@@ -10,6 +10,7 @@ namespace Meloncut\AliLog;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Monolog\Logger;
 
 class AliCloudLogProvider extends ServiceProvider
 {
@@ -20,7 +21,11 @@ class AliCloudLogProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind('alilog',AliCloudLogHandler::class);
+        $this->app->configureMonologUsing(function (Logger $monolog) {
+            $monolog->pushHandler(
+                new AliCloudLogHandler($this->app->get(ALiCloudLogInvoker::class),Logger::DEBUG)
+            );
+        });
         $this->AliLogInit();
     }
 
