@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: dizzylee
+ * User: meloncut
  * Date: 2019/10/17
  * Time: 3:03 PM
  */
@@ -23,6 +23,15 @@ class AliCloudLogHandler extends AbstractProcessingHandler
 
     protected function write(array $record)
     {
-        $this->invoker->sendLog($record);
+        $this->invoker->sendLog($this->contentTransfer($record));
+    }
+
+    protected function contentTransfer(array $record)
+    {
+        return [
+            'message' => $record['message'] ?? '',
+            'context' => json_encode($record['context']),
+            'level' => $record['level_name']
+        ];
     }
 }

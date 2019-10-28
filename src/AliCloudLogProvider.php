@@ -36,6 +36,11 @@ class AliCloudLogProvider extends ServiceProvider
         parent::__construct($app);
     }
 
+    /**
+     * register
+     *
+     * @author <meloncut@outlook.com>
+     */
     public function register()
     {
         $this->AliLogInit();
@@ -46,6 +51,11 @@ class AliCloudLogProvider extends ServiceProvider
         });
     }
 
+    /**
+     * register a Ali Cloud Client Invoker
+     *
+     * @author <meloncut@outlook.com>
+     */
     protected function AliLogInit()
     {
         $this->app->singleton(ALiCloudLogInvoker::class, static function () {
@@ -54,6 +64,13 @@ class AliCloudLogProvider extends ServiceProvider
 
     }
 
+    /**
+     * transfer laravel log level to monolog level
+     *
+     * @param $level
+     * @return int|mixed
+     * @author <meloncut@outlook.com>
+     */
     protected function logLevelTransfer($level)
     {
         return $this->levels[$level] ?? Logger::INFO;
