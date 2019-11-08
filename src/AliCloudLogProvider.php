@@ -43,6 +43,8 @@ class AliCloudLogProvider extends ServiceProvider
      */
     public function register()
     {
+        if (!Config::get('logging.alilog.enable'))
+            return ;
         $this->AliLogInit();
         $this->app->configureMonologUsing(function (Logger $monolog) {
             $monolog->pushHandler(
